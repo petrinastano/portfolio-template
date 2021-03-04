@@ -1,0 +1,379 @@
+
+<h2 class="h3 title-2">Intro</h2>
+
+<p>
+Ako dizajnér denne pracujem s množstvom informácií a nápadov, ktoré potrebujem spracovať tak aby boli tieto dáta pre mňa kedykoľvek dostupné v digitálnej podobe. Určité obdobie som na tieto účely využíval freemium aplikáciu Wunderlist (R.I.P., dnes už pod názvom Todoist), konkrétne dovtedy kým Microsoft neohlásil akvizíciu tejto spoločnosti s čím samozrejme priniesli aj zmeny v podmienkach používania a množstvo “vylepšení” pre novú pripravovanú verziu aplikácie.
+</p>
+
+
+
+<p>
+Pri takých spoločnostiach ako Microsoft si však človek nemôže byť istý akým smerom sa budú uberať ich projekty v blízkej alebo ďalekej budúcnosti. Z tohto hľadiska nie je vôbec zaručené či sa napr. dostanete k svojim dátam aj o 5 či 10 rokov neskôr.
+</p>
+
+
+
+<p>
+Každopádne som si konečne uvedomil, že podobné riešenia nie sú z dlhodobého hľadiska ideálne, obzvlášť keď Vám môže prevádzkovateľ služby kedykoľvek ohlásiť ukončenie činnosti či zmenu cenovej politiky a pod.
+</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 title-2">TiddlyWiki</h2>
+
+<p>
+Po niekoľkodňovom prieskume rôznych open-source riešení som sa rozhodol preniesť svoje dáta do aplikácie TiddlyWiki, ktorá funguje ako note-taking aplikácia pod BSD licencou vyvíjaná komunitou už takmer 16 rokov. Z hľadiska funkcionality je teda pomerne robustná a pomocou pluginov rozšíriteľná (pod. ako Drupal či Wordpress) o nové možnosti.
+</p>
+
+
+
+<p>
+<b>Bližšie info o projekte</b>
+<br>
+<a class="href" target="_blank" href="https://en.wikipedia.org/wiki/TiddlyWiki">https://en.wikipedia.org/wiki/TiddlyWiki</a>
+<br><br>
+
+TiddlyWiki je aplikácia navrhnutá v časoch kedy bola na vrchole mobilných technológií tak maximálne <a class="href" target="_blank" href="https://en.wikipedia.org/wiki/Motorola_Razr">Motorola Razr V3</a> takže sa o nejakej responzivite moc nediskutovalo. Aktuálna verzia tejto wiki sa už síce začína tváriť trošku responzívne no z hľadiska použiteľnosti stále škrýpe. Už dlhšiu dobu som uvažoval o tom, že navrhnem koncept ktorým by som namotal open-source komunitu k diskusiám o tom ako by eventuálne mohla fungovať nová hybridná verzia tejto aplikácie na smartphonoch a tabletoch.
+</p>
+
+
+
+<p>
+Počas návrhu dizajnu som sa opieral o niekoľko kľúčových funkcií, ktoré sú v aktuálnej verzii aplikácie problematické pri interakcií cez mobilné zariadenia.
+</p>
+
+
+
+<ul>
+    <li>zobrazovanie údajov vo forme nástenky (pod. ako príspevky na FB či Twitter)</li>
+    <li>zadávanie, editovanie a formátovanie údajov</li>
+    <li>organizovanie  údajov do hierarchických štruktúr, možnosť vytvárať ľubovoľné 
+   množstvo kategórií a podkategórií</li>
+    <li>vyhľadávanie, filtrovanie</li>
+</ul>
+
+
+
+<p>
+Pripravil som klikateľný prototyp aplikácie, ktorého funkcie sú popísane v nasledovnej časti tejto prezentácie.
+
+
+<br><br><br>
+
+
+
+<a class="href" target="_blank" href="https://www.figma.com/proto/6ARjHzpJzYb0XEEb6sbgvQ/Testing?node-id
+=209%3A0&scaling=scale-down">
+<b>Prototyp, nová verzia aplikácie</b>
+</a>
+
+
+<br><br><br>
+
+
+<a class="href" target="_blank" href="http://wiki.petrina.sk">
+<b>Pôvodná responzívna verzia webaplikácie</b>
+</a>
+
+
+<br><br><br>
+
+
+<a class="href" target="_blank" href="https://tiddlywiki.com/">
+<b>Oficiálny web TiddlyWiki</b>
+</a>
+</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Dashboard</h2>
+
+<p>
+Jednou z praktických vlastností pôvodného dizajnu je možnosť vyskladať si obsah 
+nástenky pridaním ľubovoľného počtu príspevkov (tiddlers). Zvyčajne tak mám na nástenke zoznam vybraných príspevkov z rôznych kategórií, ktoré ma v daný deň zaujímajú a viem sa medzi nimi jednoducho presúvať scrollovaním.
+</p>
+
+
+
+<p>
+Každý príspevok (tiddler) sa tvári ako samostatný HTML dokument, ktorého obsah 
+môžete formátovať pomocou vstavaného editora (pod. ako WYSIWYG) alebo manuálne napísať celú štruktúru dokumentu v HTML.
+</p>
+
+
+
+<p>
+Narozdiel od desktop verzie, mobilná verzia nepodporuje fixné pozície kľúčových 
+ovládacích prvkov ako je pridávanie nových príspevkov a ich filtrovanie, vyhľadávanie či prehliadanie štruktúry príspevkov. V prípade, že máte na nástenke rozložených viacero príspevkov, začne byť pomerne zdĺhavé opakovane scrollovať na úplný začiatok dokumentu keď chcete tieto funkcie použiť... (viď prototyp nižšie)
+
+<br><br>
+
+<a class="href" target="_blank" href="http://wiki.petrina.sk">
+http://wiki.petrina.sk
+</a>
+</p>
+
+
+
+{{{getPicture 'original-visual-dashboard' 'png' '' ''}}}
+
+
+
+<p>
+Tieto funkcie som preto rozdelil do fixných oblastí, ktoré si počas scrollovania 
+hlavného obsahu držia svoje pozície na obrazovke zariadenia, a sú tak prístupné z 
+akejkoľvek časti aplikácie bez nutnosti sa opäť presúvať na jej úvod.    
+</p>
+
+
+
+{{{getPicture 'wireframe' 'png' '' ''}}}
+
+
+{{{getPicture 'wireframe-parts' 'png' '' ''}}}
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Nový vizuálny dizajn</h2>
+
+{{{getPicture 'new-visual-dashboard' 'png' '' ''}}}
+
+
+
+<p>
+Nový vizuálny dizajn je ladený podľa farieb použitých v aktuálnej verzii logotypu
+Tiddlywiki. Mojim cieľom bolo dosiahnuť lepšie vizuálne spojenie aplikácie a brandu, 
+tak aby boli navzájom farebne konzistentné a spoločne rezprezentovali ten istý 
+produkt.
+</p>
+
+
+
+<div class="text-center m-b-5">
+    <img data-toggle="logo" data-src="assets/img/logo-large.png" class="lazyload" alt="Wiki logo" style="max-width:150px;">
+</div>
+
+
+
+<p>
+Táto farba sprevádza aplikáciu už od jej vzniku v roku 2004 preto bolo podstatné ju 
+vo veľkej miere zachovať. Niektoré prvky ako napr. ikony alebo grafické zvýraznenia 
+používajú odtiene odvodené od tejto základnej farby.
+</p>
+
+
+
+<p>
+Horná lišta je inšpirovaná dizajnom desktop verzie aplikácie s identickým farebným 
+zvýraznením a možnosťou full-text vyhľadávania. V novej verzii je lišta rozšírená aj o 
+funkciu zobrazenia posledných editovaných príspevkov kde môže používateľ vidieť svoju 
+aktivitu v aplikácii za posledné dní.    
+</p>
+
+
+
+<div class="text-center m-b-5">
+    <img data-toggle="original-version" data-src="assets/img/original-version-large.png" class="lazyload" alt="Wiki original">
+</div>
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Editovanie obsahu</h2>
+
+<p>
+Pri vytváraní alebo editovaní príspevku ponúka aplikácia vlastný editor na 
+formátovanie obsahu. Veľkou nevýhodou pôvodnej verzie z pohľadu UX je, že editor 
+nedokáže v reálnom čase zároveň vytvárať finálny náhľad obsahu (nadpisy, tučné 
+písmo, zoznam a pod.). Finálny vzhľad sa zobrazí až po uložení príspevku na nástenke.
+</p>
+
+
+
+<p>
+Počas písania obsahu pracuje editor len so skupinou znakov ako sú ( ! ;  ‘’  ;  * ), ktoré 
+vkladá do textového poľa a ktoré parser po uložení spracuje a zobrazí výslednú 
+podobu obsahu. 
+</p>
+
+
+
+<p>
+Ak sa teda používateľ pomýli a tento znak napr. vymaže, obsah sa zobrazí ako obyčajný 
+text. Rovnako ak chce používateľ napr. zmeniť tučné písmo na nadpis, musí danú časť 
+textu manuálne označiť a v ponuke editora zvoliť funkciu pre formátovanie nadpisov 
+H1 - H3.  
+</p>
+
+
+
+{{{getPicture 'original-visual-new-tiddler' 'png' '' ''}}}
+
+
+
+<p>
+Nový koncept je inšpirovaný vlastnosťami WYSIWYG editora CK Editor ktorý počas 
+editovania dokáže obsah formátovať a zobrazovať konečný výsledok.
+<br>
+<a class="href" target="_blank" href="https://ckeditor.com/ckeditor-5/demo/">https://ckeditor.com/ckeditor-5/demo/</a>
+</p>
+
+
+
+{{{getPicture 'new-visual-new-tiddler' 'png' '' ''}}}
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Hierarchická štruktúra</h2>
+
+<p>
+Jednotlivé príspevky môžu byť navzájom poprepájané do štruktúr. Z ľubovoľného 
+príspevku môžete vytvoriť rodiča, ktorý bude obsahovať ďalšie príspevky ako svojich
+potomkov. Následne aplikácia vykreslí aktuálnu štruktúru pomocou vnorených 
+zoznamov, ktoré obsahujú názvy týchto príspevkov a zobrazujú ich vzájomne vzťahy. 
+</p>
+
+
+
+<p>
+Samotné zobrazenie štruktúry je statické a tak nie je možné sňou priamo manipulovať,
+napr. pomocou drag & drop interakcie ľubovoľne zoradiť rodičov a ich potomkov ako aj 
+jednoducho meniť ich vzájomné vzťahy (napr. presunúť potomka pod iného rodiča a 
+pod.) Tieto vlastnosti je možné meniť iba v nastaveniach daného príspevku.
+</p>
+
+
+
+{{{getPicture 'hierarchicka-struktura-old' 'png' '' ''}}}
+
+
+
+<p>
+Tieto vlastnosti som prebral z pôvodnej aplikácie Wunderlist v ktorej bolo možné 
+rovnakým spôsobom meniť štruktúru príspevkov a nastavovať im prioritu. Náhľad 
+štruktúry je oddelený do samostatnej sekcie dostupnej z hlavného toolbaru aplikácie v 
+dolnej časti obrazovky.
+</p>
+
+
+
+{{{getPicture 'hierarchicka-struktura-new-design' 'png' '' ''}}}
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Vyhľadávanie</h2>
+
+<p>
+Vyhľadávanie dostalo nový facelift v ktorom som spracoval pôvodný dropdown komponent zobrazujúci výsledky vyhľadávania do samostatnej podstránky aplikácie.
+</p>
+
+
+
+{{{getPicture 'vyhladavanie-old-design' 'png' '' ''}}}
+
+
+
+{{{getPicture 'vyhladavanie-new-design' 'png' '' ''}}}
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Dropdown menu</h2>
+
+<p>
+Niektoré komponenty ako napr. dropdown menu ponúkajú síce množstvo zaujímavých 
+funkcií z ktorých používateľ nakoniec väčšinou používa max 20%. Zvyšných 80% funkcií 
+je častokrát zbytočných čo komplikuje čitateľnosť a zaberá veľkú časť obrazovky 
+zariadenia.
+</p>
+
+
+
+{{{getPicture 'dropdown-menu-old-design' 'png' '' ''}}}
+
+
+
+<p>
+Pre mobilnú verziu som zatiaľ zúžil zoznam na 5 najčastejšie využívaných funkcií. 
+Zlepšeniu čitateľnosti napomáha aj transparentná vrstva ktorá zreteľne oddeľuje 
+zoznam funkcií od ostatného obsahu v pozadí. Upravený bol aj bounding box 
+jednotlivých položiek na základe odporúčaných rozmerov pre mobilné zariadenia.
+</p>
+
+
+
+{{{getPicture 'dropdown-menu-new-design' 'png' '' ''}}}
+
+
+
+
+
+
+
+
+<h2 class="h3 title-2 m-t-4">Záver</h2>
+
+<p>
+Dizajn aplikácie je prvým konceptom, ktorý sa bude v priebehu ďalších dizajn 
+iterácií optimalizovať v závislosti od výsledkov testovania. Tieto výstupy sú do značnej 
+miery ovplyvnené spôsobom akým používam aktuálnu verziu aplikácie a toho čo je pre 
+mňa v rozhraní aplikácie prioritou. 
+</p>
+
+
+
+<p>
+TiddlyWiki je z hľadiska používateľského rozhrania veľmi tvárna aplikácia a pokročilí 
+užívatelia si ju prispôsobujú pre svoje konkretné ciele. 
+</p>
+
+
+
+<p>
+Výhodou oproti konkurencii je, že ju dokáže okamžite využívať aj bežný užívatel bez 
+znalosti server-side technológií nakoľko môže aplikácia fungovať ako jeden statický 
+HTML dokument, ktorý je spustiteľný bez potreby akejkoľvek inštálacie a 
+nastavovania.
+</p>
+
+
+
+
+
+
+{{#>footer}}
+
+   {{{getProject projects.project1}}}
+
+   {{{getProject projects.project3}}}
+
+
+{{/footer}}

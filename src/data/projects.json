@@ -1,0 +1,59 @@
+{
+
+	"project1":{
+
+		"title": "Monitoring kartových poplatkov",
+		"href": "monitoring-kartovych-poplatkov",
+		"text" : "Vydavatelia platobných kariet potrebujú detailne monitorovať vývoj poplatkov stanovených kartovými asociáciami za využívanie elektronických platobných sieti. Pracoval som na dizajne webaplikácie, ktorá v budúcnosti umožní bankám analyzovať a optimalizovať náklady spojené s poskytovaním platobných kariet pre svojich klientov."
+
+	},
+
+	"project2":{
+
+		"title": "Webaplikácia pre očných lekárov",
+		"href": "webaplikacia-pre-ocnych-lekarov",
+		"text" : "Lorem Ipsum"
+
+	},
+
+	"project3":{
+
+		"title": "Digitálna pokladnička",
+		"href": "digitalna-pokladnicka",
+		"text" : "Prototyp mobilnej aplikácie ktorej cieľom je učiť deti hravou a zážitkovou formou ako si pravidelne sporiť svoje prvé peniaze."
+
+	},
+
+	"project4":{
+
+		"title": "Slovenská terminologická databáza",
+		"href": "slovenska-terminologicka-databaza",
+		"text" : "Lorem Ipsum"
+
+	},
+
+	"project5":{
+
+		"title": "TiddlyWiki",
+		"href": "tiddlywiki",
+		"text" : "Lorem Ipsum"
+
+	},
+
+	"project6":{
+
+		"title": "Terminologické komisie",
+		"href": "terminologicke-komisie",
+		"text" : "Lorem Ipsum"
+
+	},
+
+	"project7":{
+
+		"title": "Televízia TA3",
+		"href": "televizia-ta3",
+		"text" : "Lorem Ipsum"
+
+	}
+
+}
